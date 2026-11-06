@@ -2606,6 +2606,28 @@ const DATA = [
     "out": "No. of arguments are:  3\nSum of given command line arguments are: 33.5"
    }
   ]
+ },
+ {
+  "tema": "Módulos",
+  "cmd": "getopt.getopt(argv, shortopts, longopts)",
+  "titulo": "Módulo getopt: opciones de línea de comandos",
+  "resumen": "Analiza argumentos con opciones tipo -a 10 o --nombre=valor. Devuelve opts (lista de pares (opción, valor)) y args (lo que sobra, que no es una opción).",
+  "puntos": [
+   "argv: la lista de argumentos (normalmente sys.argv[1:]).",
+   "shortopts: letras de opciones cortas; los : indican que llevan valor → 'a:b:' acepta -a 10 -b 20.",
+   "longopts: lista de opciones largas; si llevan valor terminan en = → ['foperand=', 'soperand='].",
+   "Si pasas una opción no definida o mal escrita → getopt.GetoptError."
+  ],
+  "ejemplos": [
+   {
+    "code": "import getopt\nimport sys\n\nargv = sys.argv[1:]\ntotal = 0\n\nopts, args = getopt.getopt(argv, 'a:b:', ['foperand=', 'soperand='])\n\nfor opt, arg in opts:\n    total += float(arg)\n\nprint(f'Sum is {total}')\nprint(opts, args)\n\n# En la terminal:\n# python main.py -a 10 -b 20.5 extra",
+    "out": "Sum is 30.5\n[('-a', '10'), ('-b', '20.5')] ['extra']"
+   },
+   {
+    "code": "# Con opciones largas:\n# python main.py --foperand=5 --soperand 7",
+    "out": "Sum is 12.0"
+   }
+  ]
  }
 ];
 
