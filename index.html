@@ -2119,9 +2119,15 @@ const DATA = [
   "titulo": "Pedir datos al usuario",
   "resumen": "Muestra el mensaje en la consola y devuelve lo que escribe el usuario, SIEMPRE como string. Convierte con int() o float() si necesitas un número.",
   "puntos": [
-   "Programa interactivo: pide datos (input), hace operaciones y muestra el resultado (print)."
+   "Programa interactivo: pide datos (input), hace operaciones y muestra el resultado (print).",
+   "La consola/terminal es donde el usuario escribe; input() espera hasta que pulsa ENTER.",
+   "Al concatenar con +, añade tú el espacio: 'Hola ' + name."
   ],
   "ejemplos": [
+   {
+    "code": "name = input(\"Escriba su nombre: \")\nprint(\"Hola \" + name)",
+    "out": "Escriba su nombre: Francesc\nHola Francesc"
+   },
    {
     "code": "nombre = input('¿Cómo te llamas? ')\nedad = int(input('¿Edad? '))\nprint(f'Hola {nombre}, el año que viene tendrás {edad + 1}')",
     "out": "¿Cómo te llamas? Francesc\n¿Edad? 20\nHola Francesc, el año que viene tendrás 21"
