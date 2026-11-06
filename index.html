@@ -2568,6 +2568,23 @@ const DATA = [
     "out": "(1, 2) {'nombre': 'Ana', 'edad': 20}"
    }
   ]
+ },
+ {
+  "tema": "Eventos",
+  "cmd": "from events import Events",
+  "titulo": "Biblioteca events",
+  "resumen": "Python no trae un sistema de eventos propio. La biblioteca externa events (pip install events) lo añade, al estilo de los EventHandler de C#: creas un objeto Events, le enganchas funciones con += y al llamar al evento se ejecutan todas.",
+  "puntos": [
+   "events.nombre += función → suscribe la función al evento.",
+   "events.nombre(argumentos) → dispara el evento y llama a todas las funciones suscritas.",
+   "events.nombre -= función → la desuscribe."
+  ],
+  "ejemplos": [
+   {
+    "code": "from events import Events\n\ndef reason():\n    print(\"Something_changes because it had to\")\n\ndef something_changed(reason):\n    reason()\n\nevents = Events()\nevents.change_hook += something_changed\n\nevents.change_hook(reason)",
+    "out": "Something_changes because it had to"
+   }
+  ]
  }
 ];
 
