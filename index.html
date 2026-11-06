@@ -2408,6 +2408,23 @@ const DATA = [
  },
  {
   "tema": "Módulos",
+  "cmd": "crear paquete calc/",
+  "titulo": "Crear tu propio paquete",
+  "resumen": "Igual que los paquetes externos de PyPI, puedes crear los tuyos: una carpeta con __init__.py (vacío) y subcarpetas, cada una también con su __init__.py y sus módulos .py.",
+  "puntos": [
+   "1. Crea la carpeta calc y dentro un __init__.py vacío → ya es un paquete.",
+   "2. Dentro de calc crea los subpaquetes calculation y variables, cada uno con su __init__.py (obligatorio).",
+   "3. En calculation crea add.py, divide.py y multi.py.",
+   "4. En variables crea global_var.py y local_var.py."
+  ],
+  "ejemplos": [
+   {
+    "code": "calc/\n├── __init__.py\n├── calculation/\n│   ├── __init__.py\n│   ├── add.py\n│   ├── divide.py\n│   └── multi.py\n└── variables/\n    ├── __init__.py\n    ├── global_var.py\n    └── local_var.py"
+   }
+  ]
+ },
+ {
+  "tema": "Módulos",
   "cmd": "biblioteca estándar",
   "titulo": "Biblioteca estándar de Python",
   "resumen": "Colección de más de 200 módulos y paquetes que vienen ya instalados con Python (no hay que descargarlos) para resolver problemas comunes. Muchos están escritos en C.",
