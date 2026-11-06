@@ -2136,6 +2136,30 @@ const DATA = [
  },
  {
   "tema": "Entrada/Salida",
+  "cmd": "int(input(...))",
+  "titulo": "Convertir lo que escribe el usuario (typecast)",
+  "resumen": "input() siempre guarda un string. Para hacer cuentas, conviértelo con int() o float(). Si el usuario escribe algo que no es un número, da ValueError.",
+  "puntos": [
+   "Sin convertir, edad + 10 da TypeError: Python intenta unir texto con un número.",
+   "float(input(...)) si el número puede llevar decimales."
+  ],
+  "ejemplos": [
+   {
+    "code": "age = input(\"Por favor, introduzca su edad: \")\nprint(type(age))\nprint(age + 10)   # ❌",
+    "out": "Por favor, introduzca su edad: 20\n<class 'str'>\nTypeError: can only concatenate str (not \"int\") to str"
+   },
+   {
+    "code": "age = int(input(\"Por favor, introduzca su edad: \"))\nprint(type(age))\nprint(age + 10)",
+    "out": "Por favor, introduzca su edad: 20\n<class 'int'>\n30"
+   },
+   {
+    "code": "age = int(input(\"Por favor, introduzca su edad: \"))   # el usuario escribe hi",
+    "out": "ValueError: invalid literal for int() with base 10: 'hi'"
+   }
+  ]
+ },
+ {
+  "tema": "Entrada/Salida",
   "cmd": "print(..., sep='', end='')",
   "titulo": "print() con sep y end",
   "resumen": "sep elige qué se pone ENTRE los valores (por defecto un espacio). end elige qué se pone AL FINAL (por defecto un salto de línea).",
