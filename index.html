@@ -2500,13 +2500,81 @@ const DATA = [
     "out": "['BPF', 'LOG4', 'NV_MAGICCONST', 'RECIP_BPF', 'Random', 'SG_MAGICCONST']"
    }
   ]
+ },
+ {
+  "tema": "Eventos",
+  "cmd": "evento",
+  "titulo": "Qué es un evento",
+  "resumen": "Un evento es una señal de que ha pasado algo interesante en el programa (un clic, una tecla…). Asocias una función al evento y se ejecuta cada vez que ocurre.",
+  "puntos": [
+   "Se usan sobre todo en programas con interfaz gráfica: clics de ratón, teclas, etc.",
+   "Ejemplo: en un juego de la serpiente, pulsar ← (evento) ejecuta la función que mueve la serpiente a la izquierda."
+  ],
+  "ejemplos": []
+ },
+ {
+  "tema": "Eventos",
+  "cmd": "tt.onscreenclick(función)",
+  "titulo": "Evento de clic con turtle",
+  "resumen": "turtle es una librería que abre una ventana (lienzo) para dibujar. onscreenclick(función) ejecuta la función cada vez que haces clic en el lienzo; la función recibe las coordenadas x, y del clic.",
+  "puntos": [
+   "tt.shape('turtle') forma del cursor · tt.pensize(5) grosor del lápiz.",
+   "tt.forward(n) avanza · tt.left(g) / tt.right(g) gira g grados.",
+   "tt.mainloop() mantiene la ventana abierta hasta que la cierras."
+  ],
+  "ejemplos": [
+   {
+    "code": "import turtle as tt\n\ntt.shape(\"turtle\")\ntt.pensize(5)\n\ndef square(x, y):\n    for i in range(4):\n        tt.forward(100)\n        tt.left(90)\n\ntt.onscreenclick(square)\ntt.mainloop()",
+    "out": "(al hacer clic en la ventana, la tortuga dibuja un cuadrado)"
+   }
+  ]
+ },
+ {
+  "tema": "Eventos",
+  "cmd": "tt.onkey(función, 'tecla')",
+  "titulo": "Eventos de teclado con turtle",
+  "resumen": "onkey asocia una función a una tecla. Hay que llamar a tt.listen() para que la ventana escuche el teclado.",
+  "puntos": [
+   "Nombres de teclas: 'Up', 'Down', 'Left', 'Right', 'space', 'q'…",
+   "tt.bye() cierra la ventana."
+  ],
+  "ejemplos": [
+   {
+    "code": "import turtle as tt\n\ndef h1():\n    tt.forward(30)\n\ndef h2():\n    tt.left(45)\n\ndef h3():\n    tt.right(45)\n\ndef h4():\n    tt.bye()\n\ntt.onkey(h1, \"Up\")\ntt.onkey(h2, \"Left\")\ntt.onkey(h3, \"Right\")\ntt.onkey(h4, \"q\")\n\ntt.listen()\ntt.mainloop()",
+    "out": "(↑ avanza, ← → gira 45°, q cierra la ventana)"
+   }
+  ]
+ },
+ {
+  "tema": "Eventos",
+  "cmd": "hooks={'response': función}",
+  "titulo": "Hooks (ganchos)",
+  "resumen": "Un hook es parecido a un evento, pero sirve para ver o cambiar algo que ya está pasando, o modificar el comportamiento de una función sin tocar su código. requests permite engancharte a la respuesta.",
+  "ejemplos": [
+   {
+    "code": "import requests\n\ndef printData(r, *args, **kwargs):\n    print(r.status_code)\n    print(r.headers)\n\nrequests.get('https://google.com', hooks={'response': printData})",
+    "out": "200\n{'Date': '...', 'Content-Type': 'text/html; ...', ...}"
+   }
+  ]
+ },
+ {
+  "tema": "Funciones",
+  "cmd": "def f(*args, **kwargs):",
+  "titulo": "*args y **kwargs",
+  "resumen": "*args recoge cualquier número de argumentos sin nombre en una tupla; **kwargs recoge argumentos con nombre (clave=valor) en un diccionario.",
+  "ejemplos": [
+   {
+    "code": "def f(*args, **kwargs):\n    print(args, kwargs)\n\nf(1, 2, nombre=\"Ana\", edad=20)",
+    "out": "(1, 2) {'nombre': 'Ana', 'edad': 20}"
+   }
+  ]
  }
 ];
 
-const ORDER=["General","Listas","Tuplas","Conjuntos","Diccionarios","Strings","Comprensiones","Operadores","Bit a bit","Ordenar","Control de flujo","Funciones","Grafos","Archivos","Entrada/Salida","Módulos"];
-const COLORS={"General":"#7d8597","Listas":"#5b7fa0","Tuplas":"#5f8f86","Conjuntos":"#7a9157","Diccionarios":"#c29a45","Strings":"#c07a52","Comprensiones":"#a56b84","Operadores":"#8170a3","Bit a bit":"#b06a62","Ordenar":"#4f8aa3","Control de flujo":"#6a9a6e","Funciones":"#b58a4a","Grafos":"#548c8c","Archivos":"#9a6e9e","Entrada/Salida":"#6f88b0","Módulos":"#8a7a5c"};
-const ICONS={"General":"◆","Listas":"[ ]","Tuplas":"( )","Conjuntos":"{ }","Diccionarios":"{:}","Strings":"Aa","Comprensiones":"⟳","Operadores":"±","Bit a bit":"01","Ordenar":"↕","Control de flujo":"if","Funciones":"ƒ","Grafos":"◎","Archivos":"▤","Entrada/Salida":"⇄","Módulos":"▣"};
-const DESC={"General":"Tipos, literales y herramientas básicas","Listas":"Colecciones ordenadas y modificables","Tuplas":"Colecciones ordenadas e inmutables","Conjuntos":"Elementos únicos y sin orden","Diccionarios":"Pares clave: valor","Strings":"Texto: comillas, escapes y cortes","Comprensiones":"Crear colecciones en una línea","Operadores":"Aritméticos, lógicos, comparación y precedencia","Bit a bit":"Operaciones sobre bits y binario","Ordenar":"sorted(), .sort() y criterios key","Control de flujo":"if, bucles for/while, break y continue","Funciones":"def, return y lambda","Grafos":"Nodos y enlaces con diccionarios","Archivos":"Abrir, leer, escribir y borrar","Entrada/Salida":"input() y print() en consola","Módulos":"import, módulos, paquetes y os/random"};
+const ORDER=["General","Listas","Tuplas","Conjuntos","Diccionarios","Strings","Comprensiones","Operadores","Bit a bit","Ordenar","Control de flujo","Funciones","Grafos","Archivos","Entrada/Salida","Módulos","Eventos"];
+const COLORS={"General":"#7d8597","Listas":"#5b7fa0","Tuplas":"#5f8f86","Conjuntos":"#7a9157","Diccionarios":"#c29a45","Strings":"#c07a52","Comprensiones":"#a56b84","Operadores":"#8170a3","Bit a bit":"#b06a62","Ordenar":"#4f8aa3","Control de flujo":"#6a9a6e","Funciones":"#b58a4a","Grafos":"#548c8c","Archivos":"#9a6e9e","Entrada/Salida":"#6f88b0","Módulos":"#8a7a5c","Eventos":"#b5715a"};
+const ICONS={"General":"◆","Listas":"[ ]","Tuplas":"( )","Conjuntos":"{ }","Diccionarios":"{:}","Strings":"Aa","Comprensiones":"⟳","Operadores":"±","Bit a bit":"01","Ordenar":"↕","Control de flujo":"if","Funciones":"ƒ","Grafos":"◎","Archivos":"▤","Entrada/Salida":"⇄","Módulos":"▣","Eventos":"⚡"};
+const DESC={"General":"Tipos, literales y herramientas básicas","Listas":"Colecciones ordenadas y modificables","Tuplas":"Colecciones ordenadas e inmutables","Conjuntos":"Elementos únicos y sin orden","Diccionarios":"Pares clave: valor","Strings":"Texto: comillas, escapes y cortes","Comprensiones":"Crear colecciones en una línea","Operadores":"Aritméticos, lógicos, comparación y precedencia","Bit a bit":"Operaciones sobre bits y binario","Ordenar":"sorted(), .sort() y criterios key","Control de flujo":"if, bucles for/while, break y continue","Funciones":"def, return y lambda","Grafos":"Nodos y enlaces con diccionarios","Archivos":"Abrir, leer, escribir y borrar","Entrada/Salida":"input() y print() en consola","Módulos":"import, módulos, paquetes y os/random","Eventos":"Eventos de ratón/teclado (turtle) y hooks"};
 const ico=t=>ICONS[t]||'•';
 const temas=[...ORDER.filter(t=>DATA.some(d=>d.tema===t)),...[...new Set(DATA.map(d=>d.tema))].filter(t=>!ORDER.includes(t))];
 DATA.forEach((d,i)=>d.id=i);
