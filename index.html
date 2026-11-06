@@ -2338,6 +2338,7 @@ const DATA = [
   "titulo": "Formas de importar un módulo",
   "resumen": "Antes de usar un módulo hay que importarlo. Hay cuatro formas: import módulo, import módulo as alias, from módulo import función y from módulo import *.",
   "puntos": [
+   "Sintaxis para usar una función de un módulo: Modulo.funcion(argumentos)",
    "import random → se usa con punto: random.random()",
    "import random as ran → nombre corto: ran.randint(1, 50)",
    "from random import choice → se usa sin prefijo: choice([...])",
@@ -2377,6 +2378,24 @@ const DATA = [
    {
     "code": "import random\nprint(random.random())\nprint(random.randint(1, 6))      # dado\nprint(random.choice('Python'))   # letra al azar\ncartas = [1, 2, 3, 4]\nrandom.shuffle(cartas)\nprint(cartas)",
     "out": "0.8444218515250481\n4\nh\n[3, 1, 4, 2]   # todo cambia en cada ejecución"
+   }
+  ]
+ },
+ {
+  "tema": "Módulos",
+  "cmd": "math.sqrt()  math.pi",
+  "titulo": "Módulo math (matemáticas)",
+  "resumen": "Funciones y constantes matemáticas. Se importa con import math y se usa con math.función().",
+  "puntos": [
+   "math.sqrt(x) raíz cuadrada (devuelve float).",
+   "math.pi el número π.",
+   "math.floor(x) redondea hacia abajo · math.ceil(x) hacia arriba.",
+   "math.pow(a, b) potencia (float)."
+  ],
+  "ejemplos": [
+   {
+    "code": "import math\n\nprint(math.sqrt(100))\nprint(math.pi)\nprint(math.floor(3.7), math.ceil(3.2))\nprint(math.pow(2, 3))",
+    "out": "10.0\n3.141592653589793\n3 4\n8.0"
    }
   ]
  },
