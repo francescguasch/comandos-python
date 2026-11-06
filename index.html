@@ -2160,6 +2160,22 @@ const DATA = [
  },
  {
   "tema": "Entrada/Salida",
+  "cmd": "try / except / else",
+  "titulo": "Comprobar errores de entrada",
+  "resumen": "try prueba un código; si da el error indicado en except, se ejecuta ese bloque en lugar de parar el programa; else se ejecuta si NO hubo error. Con while True se vuelve a pedir el dato hasta que sea válido.",
+  "puntos": [
+   "except ValueError: captura solo ese tipo de error (p. ej. int('hola')).",
+   "continue vuelve a empezar el bucle (pide otra vez); break sale cuando el dato es correcto."
+  ],
+  "ejemplos": [
+   {
+    "code": "while True:\n    try:\n        age = int(input(\"Introduzca su edad: \"))\n    except ValueError:\n        print(\"¡Entrada no válida!, por favor ingrese su edad en números\")\n        continue\n    else:\n        break\nprint(age)",
+    "out": "Introduzca su edad: hola\n¡Entrada no válida!, por favor ingrese su edad en números\nIntroduzca su edad: 20\n20"
+   }
+  ]
+ },
+ {
+  "tema": "Entrada/Salida",
   "cmd": "print(..., sep='', end='')",
   "titulo": "print() con sep y end",
   "resumen": "sep elige qué se pone ENTRE los valores (por defecto un espacio). end elige qué se pone AL FINAL (por defecto un salto de línea).",
