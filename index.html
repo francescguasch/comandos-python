@@ -2344,12 +2344,14 @@ const DATA = [
  {
   "tema": "Módulos",
   "cmd": "crear mimodulo.py",
-  "titulo": "Crear módulos propios",
+  "titulo": "Crear y usar módulos propios",
   "resumen": "Un módulo propio es simplemente un archivo .py con funciones o variables. Guárdalo en la misma carpeta que tu programa y luego impórtalo por su nombre (sin el .py).",
   "puntos": [
    "calc.py: funciones de operaciones.",
    "fib.py: devuelve la serie de Fibonacci hasta n (cada número es la suma de los dos anteriores: 0, 1, 1, 2, 3, 5, 8…).",
-   "variables.py: solo variables."
+   "variables.py: solo variables.",
+   "Puedes importar varios módulos en una línea: import calc, variables.",
+   "Los nombres que uses al llamar (calc.resta) deben coincidir EXACTAMENTE con los definidos en el módulo."
   ],
   "ejemplos": [
    {
@@ -2362,8 +2364,12 @@ const DATA = [
     "code": "# variables.py\nx = 13\ny = 4\nlearning = \"Aprender Python es genial\"\nfib_num = 10"
    },
    {
-    "code": "# main.py (en la misma carpeta)\nimport calc\nimport variables\nfrom fib import fib\n\nprint(calc.add(variables.x, variables.y))\nprint(fib(variables.fib_num))\nprint(variables.learning)",
-    "out": "17\n[0, 1, 1, 2, 3, 5, 8]\nAprender Python es genial"
+    "code": "# main.py\nimport calc, variables\nx = variables.x\ny = variables.y\naddition = calc.add(x, y)\nsubtraction = calc.resta(x, y)\nmultiplication = calc.multiplicar(x, y)\ndivision = calc.divide(x, y)\nprint(addition, subtraction, multiplication, division)",
+    "out": "17 9 52 3.25"
+   },
+   {
+    "code": "# main.py\nimport fib, variables\nn = variables.x\nfib_numbers = fib.fib(n)\nprint(fib_numbers)\nprint(variables.learning)",
+    "out": "[0, 1, 1, 2, 3, 5, 8]\nAprender Python es genial"
    }
   ]
  }
