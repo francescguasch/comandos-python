@@ -1574,6 +1574,28 @@ const DATA = [
   ]
  },
  {
+  "tema": "Funciones",
+  "cmd": "return valor",
+  "titulo": "Valor devuelto (return)",
+  "resumen": "return sale de la función y vuelve al punto donde se llamó, devolviendo opcionalmente uno o varios valores. Ese valor se puede guardar en una variable o imprimir.",
+  "puntos": [
+   "return sin nada (o una función sin return) devuelve None.",
+   "Puedes devolver varios valores separados por comas: llegan como tupla y se pueden desempaquetar.",
+   "Diferencia: print() solo muestra; return devuelve el valor para seguir usándolo.",
+   "Evita llamar sum o list a tus funciones/variables: tapas las de Python."
+  ],
+  "ejemplos": [
+   {
+    "code": "def sum(list):\n    total = 0\n    for i in list:\n        total += i\n    return total\n\nprint(sum([1, 2, 3, 4]))",
+    "out": "10"
+   },
+   {
+    "code": "def min_max(numeros):\n    return min(numeros), max(numeros)\n\nmenor, mayor = min_max([3, 9, 1])\nprint(menor, mayor)\n\ndef nada():\n    return\n\nprint(nada())",
+    "out": "1 9\nNone"
+   }
+  ]
+ },
+ {
   "tema": "Ordenar",
   "cmd": "sorted(colección)",
   "titulo": "Ordenar números con sorted()",
