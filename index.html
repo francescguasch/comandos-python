@@ -2372,13 +2372,46 @@ const DATA = [
     "out": "[0, 1, 1, 2, 3, 5, 8]\nAprender Python es genial"
    }
   ]
+ },
+ {
+  "tema": "Módulos",
+  "cmd": "paquete/ + __init__.py",
+  "titulo": "Paquetes de Python",
+  "resumen": "Un paquete es una carpeta que agrupa módulos y subpaquetes (subcarpetas con más módulos). Cada carpeta lleva un archivo __init__.py, que le dice a Python «soy un paquete, no una carpeta normal». Lo normal es dejarlo vacío.",
+  "puntos": [
+   "Todos los paquetes son módulos, pero no todos los módulos son paquetes.",
+   "Incorporados: vienen con Python (json, dataclasses, sqlite3…).",
+   "Externos: creados por otros y publicados (numpy, flask, django, tensorflow…). Se instalan con pip install nombre."
+  ],
+  "ejemplos": [
+   {
+    "code": "calc/\n├── __init__.py\n├── calculation/\n│   ├── __init__.py\n│   └── add.py\n├── variables/\n│   ├── __init__.py\n│   └── ...\n└── advanced/\n    ├── __init__.py\n    └── ..."
+   }
+  ]
+ },
+ {
+  "tema": "Módulos",
+  "cmd": "from paquete.sub import módulo",
+  "titulo": "Importar desde un paquete",
+  "resumen": "Se usa el punto para bajar por las carpetas: paquete.subpaquete.módulo.",
+  "puntos": [
+   "import calc.calculation.add → hay que escribir la ruta completa al usarlo: calc.calculation.add.add(...)",
+   "from calc.calculation import add → se usa solo add.add(...)",
+   "import calc.calculation.add as add → alias corto."
+  ],
+  "ejemplos": [
+   {
+    "code": "# calc/calculation/add.py contiene:\n# def add(x, y): return x + y\n\nimport calc.calculation.add\nprint(calc.calculation.add.add(2, 3))\n\nfrom calc.calculation import add\nprint(add.add(2, 3))",
+    "out": "5\n5"
+   }
+  ]
  }
 ];
 
 const ORDER=["General","Listas","Tuplas","Conjuntos","Diccionarios","Strings","Comprensiones","Operadores","Bit a bit","Ordenar","Control de flujo","Funciones","Grafos","Archivos","Entrada/Salida","Módulos"];
 const COLORS={"General":"#7d8597","Listas":"#5b7fa0","Tuplas":"#5f8f86","Conjuntos":"#7a9157","Diccionarios":"#c29a45","Strings":"#c07a52","Comprensiones":"#a56b84","Operadores":"#8170a3","Bit a bit":"#b06a62","Ordenar":"#4f8aa3","Control de flujo":"#6a9a6e","Funciones":"#b58a4a","Grafos":"#548c8c","Archivos":"#9a6e9e","Entrada/Salida":"#6f88b0","Módulos":"#8a7a5c"};
 const ICONS={"General":"◆","Listas":"[ ]","Tuplas":"( )","Conjuntos":"{ }","Diccionarios":"{:}","Strings":"Aa","Comprensiones":"⟳","Operadores":"±","Bit a bit":"01","Ordenar":"↕","Control de flujo":"if","Funciones":"ƒ","Grafos":"◎","Archivos":"▤","Entrada/Salida":"⇄","Módulos":"▣"};
-const DESC={"General":"Tipos, literales y herramientas básicas","Listas":"Colecciones ordenadas y modificables","Tuplas":"Colecciones ordenadas e inmutables","Conjuntos":"Elementos únicos y sin orden","Diccionarios":"Pares clave: valor","Strings":"Texto: comillas, escapes y cortes","Comprensiones":"Crear colecciones en una línea","Operadores":"Aritméticos, lógicos, comparación y precedencia","Bit a bit":"Operaciones sobre bits y binario","Ordenar":"sorted(), .sort() y criterios key","Control de flujo":"if, bucles for/while, break y continue","Funciones":"def, return y lambda","Grafos":"Nodos y enlaces con diccionarios","Archivos":"Abrir, leer, escribir y borrar","Entrada/Salida":"input() y print() en consola","Módulos":"import, módulos incorporados y propios"};
+const DESC={"General":"Tipos, literales y herramientas básicas","Listas":"Colecciones ordenadas y modificables","Tuplas":"Colecciones ordenadas e inmutables","Conjuntos":"Elementos únicos y sin orden","Diccionarios":"Pares clave: valor","Strings":"Texto: comillas, escapes y cortes","Comprensiones":"Crear colecciones en una línea","Operadores":"Aritméticos, lógicos, comparación y precedencia","Bit a bit":"Operaciones sobre bits y binario","Ordenar":"sorted(), .sort() y criterios key","Control de flujo":"if, bucles for/while, break y continue","Funciones":"def, return y lambda","Grafos":"Nodos y enlaces con diccionarios","Archivos":"Abrir, leer, escribir y borrar","Entrada/Salida":"input() y print() en consola","Módulos":"import, módulos, paquetes y os/random"};
 const ico=t=>ICONS[t]||'•';
 const temas=[...ORDER.filter(t=>DATA.some(d=>d.tema===t)),...[...new Set(DATA.map(d=>d.tema))].filter(t=>!ORDER.includes(t))];
 DATA.forEach((d,i)=>d.id=i);
