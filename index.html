@@ -2585,6 +2585,27 @@ const DATA = [
     "out": "Something_changes because it had to"
    }
   ]
+ },
+ {
+  "tema": "Módulos",
+  "cmd": "sys.argv",
+  "titulo": "Módulo sys: argumentos de línea de comandos",
+  "resumen": "sys.argv es una lista con lo que escribes al ejecutar el script desde la terminal. sys.argv[0] es siempre el nombre del archivo; sys.argv[1:] son los argumentos que le pasas.",
+  "puntos": [
+   "Todos los argumentos llegan como string: convierte con int() o float() para operar.",
+   "Se ejecuta en la terminal: python main.py arg1 arg2 …",
+   "Evita llamar sum a tus funciones o variables: tapas la función sum() de Python."
+  ],
+  "ejemplos": [
+   {
+    "code": "# main.py\nimport sys\n\nlength_of_argv = len(sys.argv)\nscript_name = sys.argv[0]\nother_arguments = sys.argv[1:]\n\nprint(f\"Length of argv list     : {length_of_argv}\")\nprint(f\"Name of the script      : {script_name}\")\nprint(f\"Arguments of the script : {other_arguments}\")\n\n# En la terminal:\n# python main.py pass123 45 hello",
+    "out": "Length of argv list     : 4\nName of the script      : main.py\nArguments of the script : ['pass123', '45', 'hello']"
+   },
+   {
+    "code": "# main.py\nimport sys\n\ndef sum():\n    sum = 0\n    for i in sys.argv[1:]:\n        sum = sum + float(i)\n    print(\"No. of arguments are: \", len(sys.argv[1:]))\n    return sum\n\nsumAll = sum()\nprint(f\"Sum of given command line arguments are: {sumAll}\")\n\n# En la terminal:\n# python main.py 10 20.5 3",
+    "out": "No. of arguments are:  3\nSum of given command line arguments are: 33.5"
+   }
+  ]
  }
 ];
 
