@@ -2241,13 +2241,39 @@ const DATA = [
     "out": "['B', 'C']"
    }
   ]
+ },
+ {
+  "tema": "Módulos",
+  "cmd": "módulo = archivo .py",
+  "titulo": "Qué es un módulo",
+  "resumen": "Un módulo es un archivo de Python (.py) con funciones, variables o clases que puedes reutilizar en otros programas importándolo.",
+  "puntos": [
+   "Incorporados (predefinidos): vienen con Python, en la biblioteca estándar. Los más usados: math, os, random, datetime, sys.",
+   "Definidos por el usuario (personalizados): archivos .py que creas tú."
+  ],
+  "ejemplos": []
+ },
+ {
+  "tema": "Módulos",
+  "cmd": "import módulo",
+  "titulo": "Importar un módulo incorporado",
+  "resumen": "Con import cargas el módulo y usas sus funciones con módulo.función(). Con from módulo import función la usas directamente.",
+  "puntos": [
+   "import random as rd → le das un nombre corto (rd.randint…)."
+  ],
+  "ejemplos": [
+   {
+    "code": "import random\nprint(random.randint(1, 10))   # entero entre 1 y 10\n\nfrom random import choice\nprint(choice(['a', 'b', 'c']))  # elemento al azar",
+    "out": "7\nb   # cambian en cada ejecución"
+   }
+  ]
  }
 ];
 
-const ORDER=["General","Listas","Tuplas","Conjuntos","Diccionarios","Strings","Comprensiones","Operadores","Bit a bit","Ordenar","Control de flujo","Funciones","Grafos","Archivos","Entrada/Salida"];
-const COLORS={"General":"#7d8597","Listas":"#5b7fa0","Tuplas":"#5f8f86","Conjuntos":"#7a9157","Diccionarios":"#c29a45","Strings":"#c07a52","Comprensiones":"#a56b84","Operadores":"#8170a3","Bit a bit":"#b06a62","Ordenar":"#4f8aa3","Control de flujo":"#6a9a6e","Funciones":"#b58a4a","Grafos":"#548c8c","Archivos":"#9a6e9e","Entrada/Salida":"#6f88b0"};
-const ICONS={"General":"◆","Listas":"[ ]","Tuplas":"( )","Conjuntos":"{ }","Diccionarios":"{:}","Strings":"Aa","Comprensiones":"⟳","Operadores":"±","Bit a bit":"01","Ordenar":"↕","Control de flujo":"if","Funciones":"ƒ","Grafos":"◎","Archivos":"▤","Entrada/Salida":"⇄"};
-const DESC={"General":"Tipos, literales y herramientas básicas","Listas":"Colecciones ordenadas y modificables","Tuplas":"Colecciones ordenadas e inmutables","Conjuntos":"Elementos únicos y sin orden","Diccionarios":"Pares clave: valor","Strings":"Texto: comillas, escapes y cortes","Comprensiones":"Crear colecciones en una línea","Operadores":"Aritméticos, lógicos, comparación y precedencia","Bit a bit":"Operaciones sobre bits y binario","Ordenar":"sorted(), .sort() y criterios key","Control de flujo":"if, bucles for/while, break y continue","Funciones":"def, return y lambda","Grafos":"Nodos y enlaces con diccionarios","Archivos":"Abrir, leer, escribir y borrar","Entrada/Salida":"input() y print() en consola"};
+const ORDER=["General","Listas","Tuplas","Conjuntos","Diccionarios","Strings","Comprensiones","Operadores","Bit a bit","Ordenar","Control de flujo","Funciones","Grafos","Archivos","Entrada/Salida","Módulos"];
+const COLORS={"General":"#7d8597","Listas":"#5b7fa0","Tuplas":"#5f8f86","Conjuntos":"#7a9157","Diccionarios":"#c29a45","Strings":"#c07a52","Comprensiones":"#a56b84","Operadores":"#8170a3","Bit a bit":"#b06a62","Ordenar":"#4f8aa3","Control de flujo":"#6a9a6e","Funciones":"#b58a4a","Grafos":"#548c8c","Archivos":"#9a6e9e","Entrada/Salida":"#6f88b0","Módulos":"#8a7a5c"};
+const ICONS={"General":"◆","Listas":"[ ]","Tuplas":"( )","Conjuntos":"{ }","Diccionarios":"{:}","Strings":"Aa","Comprensiones":"⟳","Operadores":"±","Bit a bit":"01","Ordenar":"↕","Control de flujo":"if","Funciones":"ƒ","Grafos":"◎","Archivos":"▤","Entrada/Salida":"⇄","Módulos":"▣"};
+const DESC={"General":"Tipos, literales y herramientas básicas","Listas":"Colecciones ordenadas y modificables","Tuplas":"Colecciones ordenadas e inmutables","Conjuntos":"Elementos únicos y sin orden","Diccionarios":"Pares clave: valor","Strings":"Texto: comillas, escapes y cortes","Comprensiones":"Crear colecciones en una línea","Operadores":"Aritméticos, lógicos, comparación y precedencia","Bit a bit":"Operaciones sobre bits y binario","Ordenar":"sorted(), .sort() y criterios key","Control de flujo":"if, bucles for/while, break y continue","Funciones":"def, return y lambda","Grafos":"Nodos y enlaces con diccionarios","Archivos":"Abrir, leer, escribir y borrar","Entrada/Salida":"input() y print() en consola","Módulos":"import, módulos incorporados y propios"};
 const ico=t=>ICONS[t]||'•';
 const temas=[...ORDER.filter(t=>DATA.some(d=>d.tema===t)),...[...new Set(DATA.map(d=>d.tema))].filter(t=>!ORDER.includes(t))];
 DATA.forEach((d,i)=>d.id=i);
