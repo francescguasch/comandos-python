@@ -2436,6 +2436,53 @@ const DATA = [
     "out": "{\"name\": \"alice\", \"languages\": [\"Python\", \"C\", \"Javascript\"]}\n<class 'str'>"
    }
   ]
+ },
+ {
+  "tema": "Módulos",
+  "cmd": "pip install  conda install",
+  "titulo": "Instalar paquetes externos",
+  "resumen": "Los paquetes que no están en la biblioteca estándar se descargan de PyPI (Python Package Index), el repositorio oficial. Se instalan desde la terminal con pip o conda.",
+  "puntos": [
+   "pip: instala paquetes de Python.",
+   "conda (Anaconda): instala paquetes de Python y también otro software.",
+   "En un notebook de Jupyter puedes ponerlo en una celda con ! delante: !pip install requests",
+   "Paquetes populares: requests, numpy, flask, tensorflow."
+  ],
+  "ejemplos": [
+   {
+    "code": "pip install requests\nconda install requests"
+   }
+  ]
+ },
+ {
+  "tema": "Módulos",
+  "cmd": "requests.get(url)",
+  "titulo": "Paquete requests (peticiones HTTP)",
+  "resumen": "Envía una petición a una web y devuelve la respuesta. Hay que instalarlo antes (pip install requests).",
+  "puntos": [
+   "status_code → solo el código de estado (200 = todo bien, 404 = no encontrado).",
+   "content → todo el contenido de la respuesta (en bytes).",
+   "headers → las cabeceras de la respuesta.",
+   "Son atributos: van sin paréntesis."
+  ],
+  "ejemplos": [
+   {
+    "code": "import requests\nresponse = requests.get('https://www.google.com/')\nprint(response)\nprint(response.status_code)\nprint(response.headers)\nprint(response.content)",
+    "out": "<Response [200]>\n200\n{'Date': '...', 'Content-Type': 'text/html; charset=ISO-8859-1', ...}\nb'<!doctype html><html ...'"
+   }
+  ]
+ },
+ {
+  "tema": "Módulos",
+  "cmd": "dir(objeto)",
+  "titulo": "Ver qué contiene un módulo u objeto",
+  "resumen": "dir() devuelve una lista con los nombres de las funciones, métodos y atributos de un paquete, módulo u objeto. Útil para descubrir qué puedes usar.",
+  "ejemplos": [
+   {
+    "code": "import random\nprint([n for n in dir(random) if not n.startswith('_')][:6])",
+    "out": "['BPF', 'LOG4', 'NV_MAGICCONST', 'RECIP_BPF', 'Random', 'SG_MAGICCONST']"
+   }
+  ]
  }
 ];
 
