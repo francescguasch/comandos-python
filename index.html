@@ -1604,9 +1604,18 @@ const DATA = [
   "resumen": "Con una f delante del string puedes meter variables u operaciones entre llaves { } y se sustituyen por su valor.",
   "ejemplos": [
    {
+    "code": "name = 'Marc'\nedad = 20\nf\"Hola, {name}. En 30 años, tendrás {edad + 30}\"     # en Jupyter\nprint(f\"Hola, {name}. En 30 años, serás {edad + 30}\")",
+    "out": "'Hola, Marc. En 30 años, tendrás 50'\nHola, Marc. En 30 años, serás 50"
+   },
+   {
     "code": "i = 2\nj = 3\nprint(f'{j} * {i} = {i * j}')\nnombre = 'Francesc'\nprint(f'Hola, {nombre}')",
     "out": "3 * 2 = 6\nHola, Francesc"
    }
+  ],
+  "puntos": [
+   "Disponible desde Python 3.6.",
+   "Dentro de { } puedes poner operaciones: {edad + 30}.",
+   "Sin print(), en Jupyter se muestra el string entre comillas; con print() sale limpio."
   ]
  },
  {
@@ -2202,8 +2211,16 @@ const DATA = [
   "resumen": "sep elige qué se pone ENTRE los valores (por defecto un espacio). end elige qué se pone AL FINAL (por defecto un salto de línea).",
   "ejemplos": [
    {
-    "code": "print('a', 'b', 'c')\nprint('a', 'b', 'c', sep='-')\nprint('Hola', end=' ')\nprint('mundo')",
-    "out": "a b c\na-b-c\nHola mundo"
+    "code": "print(\"primera línea\")\nprint(\"segunda línea\")",
+    "out": "primera línea\nsegunda línea"
+   },
+   {
+    "code": "print(\"primera línea\", end=\" \")\nprint(\"segunda línea\")\nprint(\"primera línea\", end=\"-->\")\nprint(\"segunda línea\")",
+    "out": "primera línea segunda línea\nprimera línea-->segunda línea"
+   },
+   {
+    "code": "print(\"uno\", 2, \"tres\")\nprint(\"uno\", 2, \"tres\", sep='/')\nprint(\"uno\", 2, \"tres\", sep=':')",
+    "out": "uno 2 tres\nuno/2/tres\nuno:2:tres"
    }
   ]
  },
