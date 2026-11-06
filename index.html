@@ -1554,6 +1554,26 @@ const DATA = [
   ]
  },
  {
+  "tema": "Funciones",
+  "cmd": "def f(param1, param2):",
+  "titulo": "Parámetros y argumentos",
+  "resumen": "Los parámetros son las variables entre paréntesis al DEFINIR la función. Los argumentos son los valores que pasas al LLAMARLA. Son posicionales: el 1º argumento va al 1º parámetro, el 2º al 2º…",
+  "puntos": [
+   "Parámetro = la variable (fname). Argumento = el valor (\"Zyne\").",
+   "Si cambias el orden de los argumentos, cambia el resultado."
+  ],
+  "ejemplos": [
+   {
+    "code": "def user(fname, lname):\n    print(f\"Welcome, {fname} {lname}\")\n\n# llamada a la función\nuser(\"Zyne\", \"Rock\")\nuser(\"Rock\", \"Zyne\")   # el orden importa",
+    "out": "Welcome, Zyne Rock\nWelcome, Rock Zyne"
+   },
+   {
+    "code": "def add(x, y):\n    print(x + y)\n\nadd(10, 5)",
+    "out": "15"
+   }
+  ]
+ },
+ {
   "tema": "Ordenar",
   "cmd": "sorted(colección)",
   "titulo": "Ordenar números con sorted()",
