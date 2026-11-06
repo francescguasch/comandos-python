@@ -2176,6 +2176,27 @@ const DATA = [
  },
  {
   "tema": "Entrada/Salida",
+  "cmd": "print(a + b)  print(a, b)",
+  "titulo": "Imprimir en la consola",
+  "resumen": "print() muestra texto (entre comillas), números y el resultado de operaciones. Con + unes strings (sin espacio); con comas mezclas textos y números (separados por un espacio).",
+  "puntos": [
+   "+ entre strings concatena: '1' + '4' da '14', no 5.",
+   "No puedes unir texto y número con + (TypeError): usa comas, str() o una f-string.",
+   "Con comas, print añade un espacio entre cada valor: si el texto ya acaba en espacio, saldrán dos."
+  ],
+  "ejemplos": [
+   {
+    "code": "print(\"Hola\")\nprint('Hola')\nprint(10 + 15)\nprint(\"Hello \" + \"World!\")",
+    "out": "Hola\nHola\n25\nHello World!"
+   },
+   {
+    "code": "print(\"la suma de\", 5, \"y\", 6, \"es\", 5 + 6)\nx = '1'\ny = '4'\nprint(x + y)",
+    "out": "la suma de 5 y 6 es 11\n14"
+   }
+  ]
+ },
+ {
+  "tema": "Entrada/Salida",
   "cmd": "print(..., sep='', end='')",
   "titulo": "print() con sep y end",
   "resumen": "sep elige qué se pone ENTRE los valores (por defecto un espacio). end elige qué se pone AL FINAL (por defecto un salto de línea).",
