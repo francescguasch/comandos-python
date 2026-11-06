@@ -2405,6 +2405,37 @@ const DATA = [
     "out": "5\n5"
    }
   ]
+ },
+ {
+  "tema": "Módulos",
+  "cmd": "biblioteca estándar",
+  "titulo": "Biblioteca estándar de Python",
+  "resumen": "Colección de más de 200 módulos y paquetes que vienen ya instalados con Python (no hay que descargarlos) para resolver problemas comunes. Muchos están escritos en C.",
+  "puntos": [
+   "Ejemplos: json, os, random, math, datetime, sys, email, concurrent, pkgutil.",
+   "«Biblioteca» = paquete publicado para que otros lo usen.",
+   "Para más funciones, muchos usan paquetes externos (pip install)."
+  ],
+  "ejemplos": []
+ },
+ {
+  "tema": "Módulos",
+  "cmd": "json.loads()  json.dumps()",
+  "titulo": "Trabajar con JSON",
+  "resumen": "JSON es un formato de texto para guardar y compartir datos estructurados (p. ej. entre servidor y aplicación). En Python un JSON es un string. loads() lo convierte en diccionario; dumps() convierte un diccionario en string JSON.",
+  "puntos": [
+   "loads = load string (texto → Python) · dumps = dump string (Python → texto)."
+  ],
+  "ejemplos": [
+   {
+    "code": "import json\njson_data = '{\"name\": \"alice\", \"languages\": [\"Python\", \"C\", \"Javascript\"]}'\nprint(type(json_data))\n\nconverted_data = json.loads(json_data)\nprint(type(converted_data))\nprint(converted_data['languages'][0])",
+    "out": "<class 'str'>\n<class 'dict'>\nPython"
+   },
+   {
+    "code": "import json\ndata_dic = {\n    \"name\": \"alice\",\n    \"languages\": [\"Python\", \"C\", \"Javascript\"]\n}\njson_data = json.dumps(data_dic)\nprint(json_data)\nprint(type(json_data))",
+    "out": "{\"name\": \"alice\", \"languages\": [\"Python\", \"C\", \"Javascript\"]}\n<class 'str'>"
+   }
+  ]
  }
 ];
 
