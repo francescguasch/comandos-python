@@ -2300,6 +2300,46 @@ const DATA = [
     "out": "0.8444218515250481\n4\nh\n[3, 1, 4, 2]   # todo cambia en cada ejecución"
    }
   ]
+ },
+ {
+  "tema": "Módulos",
+  "cmd": "os.getcwd()  os.listdir()",
+  "titulo": "Módulo os: carpeta actual y su contenido",
+  "resumen": "El módulo os sirve para trabajar con el sistema de archivos. getcwd() devuelve la carpeta de trabajo actual; listdir() devuelve una lista con los archivos y carpetas que contiene.",
+  "ejemplos": [
+   {
+    "code": "import os\ncwd = os.getcwd()\nprint(cwd)\nprint(os.listdir())",
+    "out": "C:\\Users\\Francesc\\Python   # depende de tu ordenador\n['notas.txt', 'sample.txt', 'write.txt']"
+   }
+  ]
+ },
+ {
+  "tema": "Módulos",
+  "cmd": "os.mkdir()  os.rmdir()",
+  "titulo": "Módulo os: crear y borrar carpetas",
+  "resumen": "mkdir('nombre') crea una carpeta dentro de la carpeta actual; rmdir('nombre') la elimina.",
+  "puntos": [
+   "mkdir da FileExistsError si la carpeta ya existe.",
+   "rmdir solo borra carpetas VACÍAS (si no, OSError).",
+   "Para archivos se usa os.remove() (ver tema Archivos)."
+  ],
+  "ejemplos": [
+   {
+    "code": "import os\nos.mkdir(\"pythonProject\")\nprint(os.listdir())\n\nos.rmdir(\"pythonProject\")\nprint(os.listdir())",
+    "out": "['notas.txt', 'pythonProject']\n['notas.txt']"
+   }
+  ]
+ },
+ {
+  "tema": "Módulos",
+  "cmd": "help(módulo)",
+  "titulo": "Ver la documentación de un módulo",
+  "resumen": "help() muestra la documentación de cualquier módulo o función: qué contiene y cómo se usa.",
+  "ejemplos": [
+   {
+    "code": "import os\nhelp(os)          # todo el módulo\nhelp(os.mkdir)    # solo una función"
+   }
+  ]
  }
 ];
 
