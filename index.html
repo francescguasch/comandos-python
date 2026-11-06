@@ -1555,6 +1555,31 @@ const DATA = [
  },
  {
   "tema": "Funciones",
+  "cmd": "nombre_funcion(argumentos)",
+  "titulo": "Llamar a una función",
+  "resumen": "Definir la función no la ejecuta: hay que LLAMARLA escribiendo su nombre con paréntesis. Si tiene parámetros, pásale los argumentos dentro de los paréntesis.",
+  "puntos": [
+   "Sin paréntesis (welcome) no se ejecuta: solo te refieres a la función.",
+   "La función debe estar definida ANTES de llamarla, si no → NameError.",
+   "Se puede llamar desde otra función, desde la consola o importándola de otro archivo."
+  ],
+  "ejemplos": [
+   {
+    "code": "def welcome():\n    print(\"Welcome to the Python World\")\n\n# llamada a la función\nwelcome()",
+    "out": "Welcome to the Python World"
+   },
+   {
+    "code": "def multi(x, y):\n    print(x * y)\n\nmulti(2, 10)",
+    "out": "20"
+   },
+   {
+    "code": "hola()          # ❌ se llama antes de definirla\n\ndef hola():\n    print('hola')",
+    "out": "NameError: name 'hola' is not defined"
+   }
+  ]
+ },
+ {
+  "tema": "Funciones",
   "cmd": "def f(param1, param2):",
   "titulo": "Parámetros y argumentos",
   "resumen": "Los parámetros son las variables entre paréntesis al DEFINIR la función. Los argumentos son los valores que pasas al LLAMARLA. Son posicionales: el 1º argumento va al 1º parámetro, el 2º al 2º…",
