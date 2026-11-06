@@ -1532,13 +1532,25 @@ const DATA = [
  {
   "tema": "Funciones",
   "cmd": "def nombre():  return valor",
-  "titulo": "Definir una función básica",
-  "resumen": "def crea una función; su código va sangrado (4 espacios). return devuelve un valor. Se ejecuta al llamarla con nombre().",
+  "titulo": "Crear una función",
+  "resumen": "Una función es un bloque de código reutilizable que se ejecuta cada vez que la llamas. Divide el programa en partes pequeñas y fáciles de manejar.",
   "ejemplos": [
+   {
+    "code": "def first_func():\n    print(\"Hola de la función recién creada\")\n\n# llamada a la función\nfirst_func()",
+    "out": "Hola de la función recién creada"
+   },
    {
     "code": "def simpleFunction():\n    print('Dentro de la función simple')\n    return 20\n\nresultado = simpleFunction()\nprint(resultado)",
     "out": "Dentro de la función simple\n20"
    }
+  ],
+  "puntos": [
+   "def → palabra clave que empieza la función.",
+   "Nombre único + paréntesis + dos puntos: def mi_funcion():",
+   "Parámetros (opcionales): los datos que recibe, dentro de los paréntesis.",
+   "Cuerpo: las instrucciones, con sangría (4 espacios o 1 tabulación).",
+   "return (opcional): sale de la función y devuelve un valor a quien la llamó.",
+   "Se ejecuta al llamarla: mi_funcion()"
   ]
  },
  {
