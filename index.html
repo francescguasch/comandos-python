@@ -2256,15 +2256,48 @@ const DATA = [
  {
   "tema": "Módulos",
   "cmd": "import módulo",
-  "titulo": "Importar un módulo incorporado",
-  "resumen": "Con import cargas el módulo y usas sus funciones con módulo.función(). Con from módulo import función la usas directamente.",
+  "titulo": "Formas de importar un módulo",
+  "resumen": "Antes de usar un módulo hay que importarlo. Hay cuatro formas: import módulo, import módulo as alias, from módulo import función y from módulo import *.",
   "puntos": [
-   "import random as rd → le das un nombre corto (rd.randint…)."
+   "import random → se usa con punto: random.random()",
+   "import random as ran → nombre corto: ran.randint(1, 50)",
+   "from random import choice → se usa sin prefijo: choice([...])",
+   "from random import * → importa todo. No es buena práctica: no sabes qué nombres entran y pueden chocar con los tuyos."
   ],
   "ejemplos": [
    {
-    "code": "import random\nprint(random.randint(1, 10))   # entero entre 1 y 10\n\nfrom random import choice\nprint(choice(['a', 'b', 'c']))  # elemento al azar",
-    "out": "7\nb   # cambian en cada ejecución"
+    "code": "import random\nrandom.random()",
+    "out": "0.6394267984578837   # cambia en cada ejecución"
+   },
+   {
+    "code": "import random as ran\nran.randint(1, 50)",
+    "out": "23"
+   },
+   {
+    "code": "from random import choice\nchoice([4, 6, 156, 92, 4])",
+    "out": "156"
+   },
+   {
+    "code": "from random import *\nrandom()",
+    "out": "0.0250107552"
+   }
+  ]
+ },
+ {
+  "tema": "Módulos",
+  "cmd": "random.random()  randint()  choice()",
+  "titulo": "Módulo random (números al azar)",
+  "resumen": "Genera valores aleatorios: decimales, enteros, elementos de una lista o barajar.",
+  "puntos": [
+   "random() → float entre 0.0 y 1.0 (el 1.0 no se incluye).",
+   "randint(a, b) → entero entre a y b, AMBOS incluidos.",
+   "choice(secuencia) → un elemento al azar de una lista, tupla o string. (Con un diccionario no funciona bien: usa list(d) o list(d.values())).",
+   "shuffle(lista) → baraja la lista en su sitio."
+  ],
+  "ejemplos": [
+   {
+    "code": "import random\nprint(random.random())\nprint(random.randint(1, 6))      # dado\nprint(random.choice('Python'))   # letra al azar\ncartas = [1, 2, 3, 4]\nrandom.shuffle(cartas)\nprint(cartas)",
+    "out": "0.8444218515250481\n4\nh\n[3, 1, 4, 2]   # todo cambia en cada ejecución"
    }
   ]
  }
