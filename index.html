@@ -2340,6 +2340,32 @@ const DATA = [
     "code": "import os\nhelp(os)          # todo el módulo\nhelp(os.mkdir)    # solo una función"
    }
   ]
+ },
+ {
+  "tema": "Módulos",
+  "cmd": "crear mimodulo.py",
+  "titulo": "Crear módulos propios",
+  "resumen": "Un módulo propio es simplemente un archivo .py con funciones o variables. Guárdalo en la misma carpeta que tu programa y luego impórtalo por su nombre (sin el .py).",
+  "puntos": [
+   "calc.py: funciones de operaciones.",
+   "fib.py: devuelve la serie de Fibonacci hasta n (cada número es la suma de los dos anteriores: 0, 1, 1, 2, 3, 5, 8…).",
+   "variables.py: solo variables."
+  ],
+  "ejemplos": [
+   {
+    "code": "# calc.py\ndef add(x, y):\n    return x + y\n\ndef resta(x, y):\n    return x - y\n\ndef multiplicar(x, y):\n    return x * y\n\ndef divide(x, y):\n    return x / y"
+   },
+   {
+    "code": "# fib.py\ndef fib(n):\n    result = []\n    a, b = 0, 1\n    while a < n:\n        result.append(a)\n        a, b = b, a + b\n    return result"
+   },
+   {
+    "code": "# variables.py\nx = 13\ny = 4\nlearning = \"Aprender Python es genial\"\nfib_num = 10"
+   },
+   {
+    "code": "# main.py (en la misma carpeta)\nimport calc\nimport variables\nfrom fib import fib\n\nprint(calc.add(variables.x, variables.y))\nprint(fib(variables.fib_num))\nprint(variables.learning)",
+    "out": "17\n[0, 1, 1, 2, 3, 5, 8]\nAprender Python es genial"
+   }
+  ]
  }
 ];
 
