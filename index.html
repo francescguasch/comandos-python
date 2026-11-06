@@ -2628,6 +2628,24 @@ const DATA = [
     "out": "Sum is 12.0"
    }
   ]
+ },
+ {
+  "tema": "Módulos",
+  "cmd": "#!/usr/bin/env python3",
+  "titulo": "Hashbang (shebang)",
+  "resumen": "Línea especial que empieza por #! y va SIEMPRE en la primera línea del script. Le dice a la terminal qué intérprete usar para ejecutar el archivo.",
+  "puntos": [
+   "#!/usr/bin/env python → la versión de Python que haya instalada.",
+   "#!/usr/bin/env python3 (o python2) → una versión concreta.",
+   "En Linux/Mac, dale permiso de ejecución (chmod +x main.py) y ejecútalo directamente con ./main.py.",
+   "En Windows la terminal normal lo ignora; lo usa el lanzador py."
+  ],
+  "ejemplos": [
+   {
+    "code": "#!/usr/bin/env python3\nprint(\"Hola desde el script\")\n\n# En la terminal (Linux/Mac):\n# chmod +x main.py\n# ./main.py",
+    "out": "Hola desde el script"
+   }
+  ]
  }
 ];
 
